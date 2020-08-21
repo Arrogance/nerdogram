@@ -1,4 +1,7 @@
 module.exports = {
     TelegramToken: '',
+    BotWebHookURL: '',
+    BotWebHookHost: '',
+    BotWebHookPort: 0,
     OpenWeatherMapAppId: ''
 };
