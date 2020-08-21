@@ -26,6 +26,7 @@
   "devDependencies": {},
   "dependencies": {
     "axios": "^0.20.0",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "telebot": "^1.4.1"
   }
 }
