@@ -1,0 +1,30 @@
+{
+  "name": "@arrogance/nerdogram",
+  "version": "1.0.0",
+  "description": "Bot personal ideado para grupos de Telegram de amigos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arrogance/nerdogram.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "nerdobot",
+    "nerdogram"
+  ],
+  "author": "Manuel Raya <manuel@arrogance.es>",
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/Arrogance/nerdogram/issues"
+  },
+  "homepage": "https://github.com/Arrogance/nerdogram#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.20.0",
+    "glob": "^7.1.6"
+  }
+}
