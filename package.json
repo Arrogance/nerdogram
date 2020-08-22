@@ -27,6 +27,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "glob": "^7.1.6",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4",
     "telebot": "^1.4.1"
   }
 }

@@ -7,7 +7,7 @@ class EditSpy extends Command {
                 return;
             }
 
-            msg.reply.text('Hey '+msg.from.username+'... no edites, que está feo!', { asReply: true });
+            msg.reply.text('Hey @'+msg.from.username+'... no edites, que está feo!', { asReply: true });
         });
     }
 }

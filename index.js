@@ -8,16 +8,16 @@ const BotInstance = new Bot(Config.TelegramToken);
 
 const bot = BotInstance.bot;
 
-let commands = [];
+BotInstance.bot.commands = [];
 glob.sync( './commands/**/*.js' ).forEach(function(file) {
     let Command = require(path.resolve(file)); 
     if (typeof Command === 'object') {
         Command.init(bot).start();
-        commands.push(Command);
+        BotInstance.bot.commands.push(Command.constructor.name);
     } 
 });
 
 console.info('[bot.info] bot loaded with the following commands:');
-commands.forEach((command) => console.info('- '+ command.constructor.name));
+BotInstance.bot.commands.forEach((command) => console.info('- '+ command));
 
 BotInstance.start();

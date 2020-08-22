@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Command = require('./command');
+const checkCommand = require('../utils/check_disabled_command');
 
 const redditSite = 'https://www.reddit.com';
 const redditApi = 'https://www.reddit.com/r/legalteens+gonewild+nsfw+nsfw_gif+tits+realgirls/.json?';
@@ -45,13 +46,20 @@ class Tits extends Command {
             });
         })
         .catch(function (error) {
-            bot.sendMessage(msg.chat.id, '‼️ Ops, ahora no puedo ofrecerte tits, prueba más tarde ‼️');
+            bot.sendMessage(msg.chat.id, '‼️ Ops, ahora no puedo ofrecerte tits, prueba más tarde');
         });
     }
     start () {
         this.bot.on('text', (msg) => { 
             if (msg.text === '!tits') {
-                this.call(msg);
+                checkCommand(msg.chat.id, 'Tits').then((enabled) => {
+                    if (enabled) {
+                        this.call(msg);
+                        return;
+                    }
+                    
+                    this.bot.sendMessage(msg.from.id, '‼️ Ops, este comando está desactivado en este grupo');
+                });
             }
          });
     }

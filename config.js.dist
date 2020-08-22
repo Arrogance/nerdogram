@@ -3,5 +3,20 @@ module.exports = {
     BotWebHookURL: '',
     BotWebHookHost: '',
     BotWebHookPort: 0,
-    OpenWeatherMapAppId: ''
+    OpenWeatherMapAppId: '',
+    sequelize: {
+        production: {
+            username: 'user',
+            password: 'password',
+            database: 'database',
+            host: '127.0.0.1',
+            dialect: 'mysql',
+            operatorsAliases: false,
+            dialectOptions: {
+                charset: 'utf8mb4'
+            },
+            logging: true,
+            benchmark: true
+        }
+    }
 };
