@@ -53,12 +53,11 @@ class Tits extends Command {
         this.bot.on('text', (msg) => { 
             if (msg.text === '!tits') {
                 checkCommand(msg.chat.id, 'Tits').then((enabled) => {
-                    if (enabled) {
-                        this.call(msg);
-                        return;
+                    if (!enabled) {
+                        return this.bot.sendMessage(msg.chat.id, '‼️ Ops, este comando está desactivado en este grupo');
                     }
                     
-                    this.bot.sendMessage(msg.from.id, '‼️ Ops, este comando está desactivado en este grupo');
+                    this.call(msg);
                 });
             }
          });

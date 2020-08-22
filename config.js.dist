@@ -4,6 +4,9 @@ module.exports = {
     BotWebHookHost: '',
     BotWebHookPort: 0,
     OpenWeatherMapAppId: '',
+    Telebot: {
+        connectionType: 'pooling'
+    },
     sequelize: {
         production: {
             username: 'user',

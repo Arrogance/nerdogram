@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Command = require('./command');
+const checkCommand = require('../utils/check_disabled_command');
 
 const Config = require('../config');
 
@@ -111,7 +112,13 @@ class Weather extends Command {
         this.bot.on('text', (msg) => { 
             let matches = regex.exec(msg.text);
             if (matches && matches.length > 1 && matches[1] === 'tiempo') {
-                this.call(msg, matches[2]);
+                checkCommand(msg.chat.id, 'Weather').then((enabled) => {
+                    if (!enabled) {
+                        return this.bot.sendMessage(msg.chat.id, '‼️ Ops, este comando está desactivado en este grupo');
+                    }
+
+                    this.call(msg, matches[2]);
+                });
             }
          });
     }
